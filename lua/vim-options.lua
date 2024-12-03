@@ -2,6 +2,10 @@ vim.cmd("set expandtab")
 vim.cmd("set tabstop=2")
 vim.cmd("set softtabstop=2")
 vim.cmd("set shiftwidth=2")
+vim.cmd("set autoindent")
+vim.cmd("set smartindent")
+vim.cmd("set smarttab")
+vim.opt.fillchars = { eob = ' ' }
 vim.g.mapleader = " "
 vim.g.background = "light"
 
@@ -18,3 +22,5 @@ vim.keymap.set('n', '<leader>s' , ':w<CR>')
 vim.keymap.set('n', '<leader>r' , ':%s/')
 vim.wo.number = true
 vim.wo.relativenumber = true
+
+
