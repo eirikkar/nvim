@@ -23,4 +23,4 @@ vim.keymap.set('n', '<leader>r' , ':%s/')
 vim.wo.number = true
 vim.wo.relativenumber = true
 
-
+vim.diagnostic.config({ virtual_text = false })
