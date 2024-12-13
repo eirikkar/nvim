@@ -23,7 +23,7 @@ vim.lsp.inlay_hint.enable()
 vim.keymap.set('n', '<leader>h', ':nohlsearch<CR>')
 vim.keymap.set('n', '<leader>s' , ':w<CR>')
 vim.keymap.set('n', '<leader>r' , ':%s/')
-vim.keymap.set('n', '<c-n>' , ':Oil --float<CR>')
+vim.keymap.set('n', '<c-n>' , ':lua MiniFiles.open()<CR>')
 vim.keymap.set('n','<leader>m', ':CodeCompanionChat Toggle<CR>')
 vim.wo.number = true
 vim.wo.relativenumber = true
