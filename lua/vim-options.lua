@@ -10,6 +10,9 @@ vim.g.mapleader = " "
 vim.g.background = "light"
 vim.opt.swapfile = false
 vim.opt.clipboard = "unnamedplus"
+vim.lsp.inlay_hint.enable()
+vim.wo.number = true
+vim.wo.relativenumber = true
 
 -- Navigate vim panes better
 vim.keymap.set("n", "<space><space>x", "<cmd>source %<CR>")
@@ -19,14 +22,11 @@ vim.keymap.set('n', '<c-k>', ':wincmd k<CR>')
 vim.keymap.set('n', '<c-j>', ':wincmd j<CR>')
 vim.keymap.set('n', '<c-h>', ':wincmd hCR>')
 vim.keymap.set('n', '<c-l>', ':wincmd l<CR>')
-vim.lsp.inlay_hint.enable()
 vim.keymap.set('n', '<leader>h', ':nohlsearch<CR>')
 vim.keymap.set('n', '<leader>s' , ':w<CR>')
 vim.keymap.set('n', '<leader>r' , ':%s/')
 vim.keymap.set('n', '<c-n>' , ':lua MiniFiles.open()<CR>')
 vim.keymap.set('n','<leader>m', ':CodeCompanionChat Toggle<CR>')
-vim.wo.number = true
-vim.wo.relativenumber = true
 
 vim.diagnostic.config({ virtual_text = false })
 vim.api.nvim_create_autocmd("TextYankPost", {
