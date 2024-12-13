@@ -14,7 +14,7 @@ vim.lsp.inlay_hint.enable()
 vim.wo.number = true
 vim.wo.relativenumber = true
 
--- Navigate vim panes better
+-- keybindings
 vim.keymap.set("n", "<space><space>x", "<cmd>source %<CR>")
 vim.keymap.set("n", "<space>x", ":.lua<CR>")
 vim.keymap.set("v", "<space>x", ":lua<CR>")
