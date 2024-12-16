@@ -5,7 +5,7 @@ vim.cmd("set shiftwidth=2")
 vim.cmd("set autoindent")
 vim.cmd("set smartindent")
 vim.cmd("set smarttab")
-vim.opt.fillchars = { eob = ' ' }
+vim.opt.fillchars = { eob = " " }
 vim.g.mapleader = " "
 vim.g.background = "light"
 vim.opt.swapfile = false
@@ -18,21 +18,25 @@ vim.wo.relativenumber = true
 vim.keymap.set("n", "<space><space>x", "<cmd>source %<CR>")
 vim.keymap.set("n", "<space>x", ":.lua<CR>")
 vim.keymap.set("v", "<space>x", ":lua<CR>")
-vim.keymap.set('n', '<c-k>', ':wincmd k<CR>')
-vim.keymap.set('n', '<c-j>', ':wincmd j<CR>')
-vim.keymap.set('n', '<c-h>', ':wincmd hCR>')
-vim.keymap.set('n', '<c-l>', ':wincmd l<CR>')
-vim.keymap.set('n', '<leader>h', ':nohlsearch<CR>')
-vim.keymap.set('n', '<leader>s' , ':w<CR>')
-vim.keymap.set('n', '<leader>r' , ':%s/')
-vim.keymap.set('n', '<c-n>' , ':lua MiniFiles.open()<CR>')
-vim.keymap.set('n','<leader>m', ':CodeCompanionChat Toggle<CR>')
+vim.keymap.set("n", "<c-k>", ":wincmd k<CR>")
+vim.keymap.set("n", "<c-j>", ":wincmd j<CR>")
+vim.keymap.set("n", "<c-h>", ":wincmd hCR>")
+vim.keymap.set("n", "<c-l>", ":wincmd l<CR>")
+vim.keymap.set("n", "<leader>h", ":nohlsearch<CR>")
+vim.keymap.set("n", "<leader>s", ":w<CR>")
+vim.keymap.set("n", "<leader>r", ":%s/")
+vim.keymap.set("n", "<c-n>", ":lua MiniFiles.open()<CR>")
+vim.keymap.set("n", "<leader>m", ":CodeCompanionChat Toggle<CR>")
+vim.api.nvim_set_keymap("n", "<Down>", ":Treewalker Down<CR>", { noremap = true })
+vim.api.nvim_set_keymap("n", "<Up>", ":Treewalker Up<CR>", { noremap = true })
+vim.api.nvim_set_keymap("n", "<Left>", ":Treewalker Left<CR>", { noremap = true })
+vim.api.nvim_set_keymap("n", "<Right>", ":Treewalker Right<CR>", { noremap = true })
 
 vim.diagnostic.config({ virtual_text = false })
 vim.api.nvim_create_autocmd("TextYankPost", {
-	desc = "Highlight when yanking (copying) text",
-	group = vim.api.nvim_create_augroup("kickstart-highlight-yank", { clear = true }),
-	callback = function()
-		vim.highlight.on_yank()
-	end,
+  desc = "Highlight when yanking (copying) text",
+  group = vim.api.nvim_create_augroup("kickstart-highlight-yank", { clear = true }),
+  callback = function()
+    vim.highlight.on_yank()
+  end,
 })
