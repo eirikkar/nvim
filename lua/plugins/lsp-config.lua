@@ -29,18 +29,21 @@ return {
 		},
 		lazy = false,
 		config = function()
+			local capabilities = require("cmp_nvim_lsp").default_capabilities()
 			local lspconfig = require("lspconfig")
 			local mason_registry = require("mason-registry")
+
 			-- Retrieve the Omnisharp executable path
 			local omnisharp_pkg = mason_registry.get_package("omnisharp")
 			local omnisharp_path = omnisharp_pkg:get_install_path() .. "/omnisharp"
-			local capabilities = require("blink.cmp").get_lsp_capabilities()
-			-- Omnisharp setup
+
+			-- Configure Omnisharp
 			lspconfig.omnisharp.setup({
 				cmd = { omnisharp_path, "--languageserver", "--hostPID", tostring(vim.fn.getpid()) },
 				capabilities = capabilities,
 			})
-			-- Lua LSP setup
+
+			-- Configure lua_ls
 			lspconfig.lua_ls.setup({
 				capabilities = capabilities,
 				settings = {
@@ -57,18 +60,6 @@ return {
 						},
 					},
 				},
-			})
-			-- Autoformat on save
-			vim.api.nvim_create_autocmd("LspAttach", {
-				group = vim.api.nvim_create_augroup("lsp", { clear = true }),
-				callback = function(args)
-					vim.api.nvim_create_autocmd("BufWritePre", {
-						buffer = args.buf,
-						callback = function()
-							vim.lsp.buf.format({ async = false, id = args.data.client_id })
-						end,
-					})
-				end,
 			})
 
 			-- Key mappings
