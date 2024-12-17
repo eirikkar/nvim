@@ -14,12 +14,10 @@ return {
             ensure_installed = {
                 "omnisharp",
                 "lua_ls",
-                "bash-language-server",
-                "tsserver",
+                "ts_ls",
                 "eslint",
                 "html",
                 "cssls",
-                "prettier",
             },
         },
     },
@@ -52,7 +50,7 @@ return {
                 capabilities = capabilities,
             })
 
-            lspconfig.pythonlspserver.setup({
+            lspconfig.pyright.setup({
                 capabilities = capabilities,
             })
 
@@ -79,7 +77,7 @@ return {
                     },
                 },
             })
-            lspconfig.tsserver.setup({
+            lspconfig.ts_ls.setup({
                 capabilities = capabilities,
             })
             lspconfig.html.setup({
