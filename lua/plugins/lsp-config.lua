@@ -18,6 +18,7 @@ return {
                 "eslint",
                 "html",
                 "cssls",
+                "pyright",
             },
         },
     },
