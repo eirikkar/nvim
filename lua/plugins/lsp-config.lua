@@ -90,6 +90,9 @@ return {
             lspconfig.eslint.setup({
                 capabilities = capabilities,
             })
+            lspconfig.rust_analyzer.setup({
+                capabilities = capabilities,
+            })
 
             -- Key mappings
             vim.keymap.set("n", "K", vim.lsp.buf.hover, {})
