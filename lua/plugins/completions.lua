@@ -1,8 +1,14 @@
 return {
     {
         "saghen/blink.cmp",
-        dependencies = "rafamadriz/friendly-snippets",
-
+        dependencies = {
+            {
+                "rafamadriz/friendly-snippets",
+            },
+            {
+                "giuxtaposition/blink-cmp-copilot",
+            },
+        },
         version = "v0.*",
         opts = {
             -- 'default' for mappings similar to built-in completion
@@ -18,7 +24,15 @@ return {
             },
 
             sources = {
-                default = { "lsp", "path", "snippets", "buffer" },
+                default = { "lsp", "path", "snippets", "buffer", "copilot" },
+                providers = {
+                    copilot = {
+                        name = "copilot",
+                        module = "blink-cmp-copilot",
+                        score_offset = -100, -- the higher the number, the higher the priority
+                        async = true,
+                    },
+                },
             },
         },
         opts_extend = { "sources.default" },
