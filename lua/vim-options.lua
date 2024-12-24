@@ -29,7 +29,7 @@ vim.keymap.set("n", "<leader>r", ":%s/")
 vim.keymap.set("n", "<c-n>", ":Oil --float<CR>")
 vim.keymap.set("n", "<leader>m", ":CodeCompanionChat Toggle<CR>")
 vim.api.nvim_set_keymap("n", "<PageUp>", "<c-u>", { noremap = true })
-vim.api.nvim_set_keymap("n", "<PageUp>", "<c-d>", { noremap = true })
+vim.api.nvim_set_keymap("n", "<PageDown>", "<c-d>", { noremap = true })
 
 vim.diagnostic.config({ virtual_text = false })
 vim.api.nvim_create_autocmd("TextYankPost", {
