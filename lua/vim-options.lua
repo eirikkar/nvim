@@ -30,14 +30,15 @@ vim.keymap.set("n", "<c-n>", ":Oil --float<CR>")
 vim.keymap.set("n", "<leader>m", ":CodeCompanionChat Toggle<CR>")
 vim.api.nvim_set_keymap("n", "<Down>", ":Treewalker Down<CR>", { noremap = true })
 vim.api.nvim_set_keymap("n", "<Up>", ":Treewalker Up<CR>", { noremap = true })
-vim.api.nvim_set_keymap("n", "<Left>", ":Treewalker Left<CR>", { noremap = true })
+vim.api.nvim_set_keymap("n", "<PageUp>", "<c-u>", { noremap = true })
+vim.api.nvim_set_keymap("n", "<PageUp>", "<c-d>", { noremap = true })
 vim.api.nvim_set_keymap("n", "<Right>", ":Treewalker Right<CR>", { noremap = true })
 
 vim.diagnostic.config({ virtual_text = false })
 vim.api.nvim_create_autocmd("TextYankPost", {
-  desc = "Highlight when yanking (copying) text",
-  group = vim.api.nvim_create_augroup("kickstart-highlight-yank", { clear = true }),
-  callback = function()
-    vim.highlight.on_yank()
-  end,
+    desc = "Highlight when yanking (copying) text",
+    group = vim.api.nvim_create_augroup("kickstart-highlight-yank", { clear = true }),
+    callback = function()
+        vim.highlight.on_yank()
+    end,
 })
