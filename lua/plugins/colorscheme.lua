@@ -1,44 +1,57 @@
 return {
-  {
-    "sainnhe/gruvbox-material",
+    "catppuccin/nvim",
+    name = "catppuccin",
     lazy = false,
     priority = 1000,
     config = function()
-      vim.g.gruvbox_material_background = "medium" -- hard, soft, medium
-      vim.g.gruvbox_material_foreground = "medium" -- original, mix, material
-      vim.g.gruvbox_material_enable_italic = 1
-      vim.g.gruvbox_material_sign_column_background = 'none'
-
-      grpid = vim.api.nvim_create_augroup('custom_highlights_gruvboxmaterial', {})
-      vim.api.nvim_create_autocmd('ColorScheme', {
-        group = grpid,
-        pattern = 'gruvbox-material',
-        command =
-            'hi NvimTreeNormal                     guibg=#181818 |' ..
-            'hi NvimTreeEndOfBuffer                guibg=#181818 |' ..
-            'hi NoiceCmdlinePopupBorderCmdline     guifg=#ea6962 guibg=#282828 |' ..
-            'hi TelescopePromptBorder              guifg=#ea6962 guibg=#282828 |' ..
-            'hi TelescopePromptNormal              guifg=#ea6962 guibg=#282828 |' ..
-            'hi TelescopePromptTitle               guifg=#ea6962 guibg=#282828 |' ..
-            'hi TelescopePromptPrefix              guifg=#ea6962 guibg=#282828 |' ..
-            'hi TelescopePromptCounter             guifg=#ea6962 guibg=#282828 |' ..
-            'hi TelescopePreviewTitle              guifg=#89b482 guibg=#282828 |' ..
-            'hi TelescopePreviewBorder             guifg=#89b482 guibg=#282828 |' ..
-            'hi TelescopeResultsTitle              guifg=#89b482 guibg=#282828 |' ..
-            'hi TelescopeResultsBorder             guifg=#89b482 guibg=#282828 |' ..
-            'hi TelescopeMatching                  guifg=#d8a657 guibg=#282828 |' ..
-            'hi TelescopeSelection                 guifg=#ffffff guibg=#32302f |' ..
-            'hi FloatBorder                        guifg=#ea6962 guibg=#282828 |' ..
-            'hi BqfPreviewBorder                   guifg=#ea6962 guibg=#282828 |' ..
-            'hi NormalFloat                        guibg=#282828 |' ..
-            'hi IndentBlanklineContextChar         guifg=#d3869b |' ..
-            'hi StatusColumnBorder                 guifg=#232323 |' ..
-            'hi StatusColumnBuffer                 guibg=#282828 |' ..
-            'hi CursorLineNr                       guifg=#d8a657 |' ..
-            'hi CodewindowBorder                   guifg=#ea6962 |' ..
-            'hi TabLine                            guibg=#282828 |'
-      })
-      vim.cmd 'colorscheme gruvbox-material'
+        require("catppuccin").setup({
+            flavour = "mocha", -- latte, frappe, macchiato, mocha
+            background = { -- :h background
+                light = "latte",
+                dark = "mocha",
+            },
+            transparent_background = false, -- disables setting the background color.
+            show_end_of_buffer = false, -- shows the '~' characters after the end of buffers
+            term_colors = false,   -- sets terminal colors (e.g. `g:terminal_color_0`)
+            dim_inactive = {
+                enabled = false,   -- dims the background color of inactive window
+                shade = "dark",
+                percentage = 0.15, -- percentage of the shade to apply to the inactive window
+            },
+            no_italic = false,     -- Force no italic
+            no_bold = false,       -- Force no bold
+            no_underline = false,  -- Force no underline
+            styles = {             -- Handles the styles of general hi groups (see `:h highlight-args`):
+                comments = { "italic" }, -- Change the style of comments
+                conditionals = { "italic" },
+                loops = {},
+                functions = {},
+                keywords = {},
+                strings = {},
+                variables = {},
+                numbers = {},
+                booleans = {},
+                properties = {},
+                types = {},
+                operators = {},
+                -- miscs = {}, -- Uncomment to turn off hard-coded styles
+            },
+            color_overrides = {},
+            custom_highlights = {},
+            default_integrations = true,
+            integrations = {
+                cmp = true,
+                gitsigns = true,
+                nvimtree = true,
+                treesitter = true,
+                notify = false,
+                mini = {
+                    enabled = true,
+                    indentscope_color = "",
+                },
+                -- For more plugins integrations please scroll down (https://github.com/catppuccin/nvim#integrations)
+            },
+        })
+        vim.cmd("colorscheme catppuccin")
     end,
-  }
 }
