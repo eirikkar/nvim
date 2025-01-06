@@ -93,6 +93,9 @@ return {
             lspconfig.rust_analyzer.setup({
                 capabilities = capabilities,
             })
+            lspconfig.clangd.setup({
+                capabilities = capabilities,
+            })
             -- Autoformat on save
             vim.api.nvim_create_autocmd("LspAttach", {
                 group = vim.api.nvim_create_augroup("lsp", { clear = true }),
