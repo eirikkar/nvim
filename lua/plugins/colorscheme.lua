@@ -7,6 +7,7 @@ return {
             vim.g.gruvbox_material_background = "medium" -- hard, soft, medium
             vim.g.gruvbox_material_foreground = "medium" -- original, mix, material
             vim.g.gruvbox_material_enable_italic = 1
+            vim.g.gruvbox_material_transparent_background = 1
             vim.g.gruvbox_material_sign_column_background = "none"
 
             grpid = vim.api.nvim_create_augroup("custom_highlights_gruvboxmaterial", {})
