@@ -1,21 +1,36 @@
 return {
     {
-        "dgox16/oldworld.nvim",
-        lazy = false,
-        priority = 1000,
+        "vague2k/vague.nvim",
         config = function()
-            require("oldworld").setup({
-                vim.cmd.colorscheme("oldworld"),
-                variant = "oled",
-                styles = {
-                    booleans = { italic = true, bold = true },
-                },
-                integrations = {
-                    hop = true,
-                    telescope = true,
-                },
-                highlight_overrides = {
-                    Comment = { bg = "#ff0000" },
+            require("vague").setup({
+                vim.cmd.colorscheme("vague"),
+                transparent = true,
+                style = {
+                    -- "none" is the same thing as default. But "italic" and "bold" are also valid options
+                    boolean = "bold",
+                    number = "none",
+                    float = "none",
+                    error = "bold",
+                    comments = "italic",
+                    conditionals = "none",
+                    functions = "bold",
+                    headings = "bold",
+                    operators = "none",
+                    strings = "italic",
+                    variables = "none",
+
+                    -- keywords
+                    keywords = "none",
+                    keyword_return = "none",
+                    keywords_loop = "none",
+                    keywords_label = "none",
+                    keywords_exception = "none",
+
+                    -- builtin
+                    builtin_constants = "none",
+                    builtin_functions = "none",
+                    builtin_types = "none",
+                    builtin_variables = "none",
                 },
             })
         end,
