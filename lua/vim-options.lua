@@ -1,9 +1,10 @@
 vim.cmd("set expandtab")
 vim.cmd("set tabstop=2")
 vim.cmd("set softtabstop=2")
-vim.cmd("set shiftwidth=4")
+vim.cmd("set shiftwidth=2")
 vim.opt.expandtab = true
-vim.opt.shiftwidth = 4
+vim.opt.tabstop = 2
+vim.opt.shiftwidth = 2
 vim.opt.fillchars = { eob = " " }
 vim.g.mapleader = " "
 vim.g.background = "light"
