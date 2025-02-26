@@ -1,5 +1,6 @@
 return {
   "stevearc/conform.nvim",
+  "zapling/mason-conform.nvim",
   opts = {},
   config = function()
     require("conform").setup({
