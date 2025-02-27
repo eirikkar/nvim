@@ -8,7 +8,7 @@ return {
         style = {
           -- "none" is the same thing as default. But "italic" and "bold" are also valid options
           boolean = "bold",
-          number = "none",
+          number = "bold",
           float = "none",
           error = "bold",
           comments = "italic",
