@@ -12,10 +12,10 @@ vim.opt.swapfile = false
 vim.lsp.inlay_hint.enable()
 vim.wo.number = true
 vim.wo.relativenumber = true
+vim.opt.clipboard = "unnamedplus"
+
 
 -- keybindings
-vim.keymap.set("n", "<leader>p", "\"+p")
-vim.keymap.set("n", "<leader>y", "\"+y")
 vim.keymap.set({ "i", "n" }, "<esc>", "<cmd>noh<cr><esc>")
 vim.keymap.set("n", "<space><space>x", "<cmd>source %<CR>")
 vim.keymap.set("n", "<space>x", ":.lua<CR>")
