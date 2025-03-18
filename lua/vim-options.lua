@@ -14,7 +14,6 @@ vim.wo.number = true
 vim.wo.relativenumber = true
 vim.opt.clipboard = "unnamedplus"
 
-
 -- keybindings
 vim.keymap.set({ "i", "n" }, "<esc>", "<cmd>noh<cr><esc>")
 vim.keymap.set("n", "<space><space>x", "<cmd>source %<CR>")
@@ -27,7 +26,12 @@ vim.keymap.set("n", "<c-l>", ":wincmd l<CR>")
 vim.keymap.set("n", "<leader>h", ":nohlsearch<CR>")
 vim.keymap.set("n", "<leader>s", ":w<CR>")
 vim.keymap.set("n", "<leader>r", ":%s/")
-vim.keymap.set("n", "<c-n>", ":Oil --float<CR>")
+vim.api.nvim_set_keymap(
+  "n",
+  "<c-n>",
+  [[<cmd>lua require("oil").toggle_float()<CR>]],
+  { noremap = true, silent = true, desc = "Toggle Oil float" }
+)
 vim.keymap.set("n", "<leader>m", ":CodeCompanionChat Toggle<CR>")
 vim.api.nvim_set_keymap("n", "<PageUp>", "<c-u>zz", { noremap = true })
 vim.api.nvim_set_keymap("n", "<PageDown>", "<c-d>zz", { noremap = true })
