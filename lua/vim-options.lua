@@ -9,12 +9,13 @@ vim.opt.fillchars = { eob = " " }
 vim.g.mapleader = " "
 vim.g.background = "light"
 vim.opt.swapfile = false
-vim.opt.clipboard = "unnamedplus"
 vim.lsp.inlay_hint.enable()
 vim.wo.number = true
 vim.wo.relativenumber = true
 
 -- keybindings
+vim.keymap.set("n", "<leader>p", "+p")
+vim.keymap.set("n", "<leader>y", "+y")
 vim.keymap.set({ "i", "n" }, "<esc>", "<cmd>noh<cr><esc>")
 vim.keymap.set("n", "<space><space>x", "<cmd>source %<CR>")
 vim.keymap.set("n", "<space>x", ":.lua<CR>")
