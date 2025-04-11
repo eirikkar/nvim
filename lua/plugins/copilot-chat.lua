@@ -36,7 +36,7 @@ return {
           return require("codecompanion.adapters").extend("openai_compatible", {
             env = {
               url = "https://openrouter.ai/api",
-              api_key = "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",
+              api_key = "key",
               chat_url = "/v1/chat/completions",
             },
             schema = {
