@@ -11,7 +11,7 @@ return {
         rust = { "rustfmt", lsp_format = "fallback" },
         -- Conform will run the first available formatter
         javascript = { "prettierd", "prettier", stop_after_first = true },
-        javascriptreact = { "prettierd", "prettier", stop_after_first = true },
+        javascriptreact = { "prettier", "prettierd", stop_after_first = true },
         cs = { "csharpier" },
       },
       format_on_save = {

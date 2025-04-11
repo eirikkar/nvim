@@ -7,12 +7,13 @@ vim.opt.tabstop = 2
 vim.opt.shiftwidth = 2
 vim.opt.fillchars = { eob = " " }
 vim.g.mapleader = " "
-vim.g.background = "light"
 vim.opt.swapfile = false
 vim.lsp.inlay_hint.enable()
 vim.wo.number = true
 vim.wo.relativenumber = true
 vim.opt.clipboard = "unnamedplus"
+vim.o.termguicolors = true
+
 
 -- keybindings
 vim.keymap.set({ "i", "n" }, "<esc>", "<cmd>noh<cr><esc>")
